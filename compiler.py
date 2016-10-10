@@ -15,6 +15,7 @@ def getCompiler():
 def compile(compiler, sourcecode):
 	bytecode = compiler.compile(sourcecode, path=None, libraries=None)
 	contract_interface = compiler.mk_full_signature(sourcecode, path=None)
+	
 	translator = ContractTranslator(contract_interface)
 	print('Hex sourcecode:')
 #	print(bytecode)

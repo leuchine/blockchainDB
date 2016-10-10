@@ -1,0 +1,3 @@
+create table storage(address char(20), item varchar(32), value varchar(32), time DATETIME DEFAULT CURRENT_TIMESTAMP, primary key(address, item));
+
+
