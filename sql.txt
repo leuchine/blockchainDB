@@ -1,3 +1,11 @@
-create table storage(address char(20), item varchar(32), value varchar(32), time DATETIME DEFAULT CURRENT_TIMESTAMP, primary key(address, item));
+create table storage(sid int not null IDENTITY(1,1), address varchar(80), item varchar(80), value varchar(80), time DATETIME DEFAULT CURRENT_TIMESTAMP, hash varchar(128));
 
+create table account(aid int not null IDENTITY(1,1), address varchar(80), balance bigint, hash varchar(128));
 
+create table code (addr varchar(80) primary key, code varchar(8000), abi varchar(8000));
+
+create table transactions(hash varchar(128) primary key, fromuser varchar(80), touser varchar(80), value bigint, data varchar(8000));
+
+create table associatedtx(hash varchar(128), fromuser varchar(80), touser varchar(80), value bigint, data varchar(8000));
+
+create table logs (hash varchar(128) primary key, output varchar(8000));

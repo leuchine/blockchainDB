@@ -17,9 +17,9 @@ def compile(compiler, sourcecode):
 	contract_interface = compiler.mk_full_signature(sourcecode, path=None)
 	
 	translator = ContractTranslator(contract_interface)
-	print('Hex sourcecode:')
+	#print('Hex sourcecode:')
 #	print(bytecode)
-	print(encode_hex(bytecode))
+	#print(encode_hex(bytecode))
 #	print('ABI:')
 #	print(contract_interface)
 	return bytecode, contract_interface, translator
